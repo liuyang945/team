@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/huajia/huajia",
+    "pages/person/person"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/huajia/huajia",
+        "text": "花架",
+        "iconPath": "images/icons/huajia1.png",
+        "selectedIconPath": "images/icons/huajia2.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人",
+        "iconPath": "images/icons/person1.png",
+        "selectedIconPath": "images/icons/person2.png"
+      }
+    ],
+    "color": "#000",
+    "selectedColor": "#000"
+  },
+  "sitemapLocation": "sitemap66.json"
+}
