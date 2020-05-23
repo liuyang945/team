@@ -1,0 +1,4 @@
+<view>
+<image src="/images/image/wood.webp" style="height:1334rpx;width:750rpx" ></image>
+<cover-image src="/images/image/huajia.png"></cover-image>
+</view>
