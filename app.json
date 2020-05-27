@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/huajia/huajia",
-    "pages/person/person"
+    "pages/person/person",
+    "pages/huajia-detail/index"
   ],
   "window":
   {

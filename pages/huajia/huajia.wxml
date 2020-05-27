@@ -1,4 +1,5 @@
-<view>
-<image src="/images/image/wood.webp" style="height:1334rpx;width:750rpx" ></image>
-<cover-image src="/images/image/huajia.png"></cover-image>
+<view class="container" style="flex-direction:row">>
+ <image class="background" src="/images/image/wood.bmp"></image>
+ <fangan fanganimage="{{fanganimage}}" fanganname="{{fanganname}}" ></fangan> 
 </view>
+

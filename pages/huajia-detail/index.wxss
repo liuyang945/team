@@ -1,0 +1,55 @@
+/* pages/huajia-detail/index.wxss */
+/**
+BODY
+*/
+.body {
+  background-color: #fff;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/**
+文字
+*/
+.text {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+顶部图片
+*/
+.imagesize {
+  display: flex;
+  justify-content: center;
+}
+.imagesize image {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+/**
+按钮
+*/
+.btn-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 60%;
+}
+.mini-btn{
+  margin-right: 10rpx;
+}

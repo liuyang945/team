@@ -1,0 +1,17 @@
+<!--pages/huajia-detail/index.wxml-->
+<view class="body">
+  <view class='imagesize'>
+    <image src="{{flower.img}}" class='in-image'   >
+    </image>
+  </view>
+
+  <view class="text">
+    <text style="font-weight:bold; font-size:50rpx;">{{flower.name}}</text>
+  </view>
+
+  <view class="btn-area" id="buttonContainer">
+    <button type="default" plain="true">我的方案</button>
+    <button type="default" plain="true">花之语录</button>
+    <button type="primary" plain="true">再过{{watering}}天就该浇水了</button>
+  </view>
+</view>
