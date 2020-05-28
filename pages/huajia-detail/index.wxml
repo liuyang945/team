@@ -1,17 +1,38 @@
 <!--pages/huajia-detail/index.wxml-->
 <view class="body">
+  <!--背景图片-->
+  <image class='background' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590210160748&di=afb651224e8071b556e2da94cc712105&imgtype=0&src=http%3A%2F%2Fimage1.wulinsoso.com%2Fhdpic%2Fzcool%2F2014%2F06%2F02%2F004405469.jpg" mode="aspectFill"></image>
+
+  <!--顶部图片-->
   <view class='imagesize'>
     <image src="{{flower.img}}" class='in-image'   >
     </image>
   </view>
 
-  <view class="text">
-    <text style="font-weight:bold; font-size:50rpx;">{{flower.name}}</text>
-  </view>
-
-  <view class="btn-area" id="buttonContainer">
-    <button type="default" plain="true">我的方案</button>
-    <button type="default" plain="true">花之语录</button>
-    <button type="primary" plain="true">再过{{watering}}天就该浇水了</button>
-  </view>
+  <!--swiper-->
+  <swiper class="detail-swiper" indicator-dots="{{true}}">
+    <swiper-item>
+      <view class="swiper-view">
+        <text>距下次浇水还有{{watering}}天</text>
+         <button class='btn1' bindtap="water">
+          <image wx:if="{{watering>0}}" class='btnImg' src='../../images/icons/浇水壶.png'></image>
+          <image wx:if="{{watering<=0}}" class='btnImg' src='../../images/icons/浇水壶2.png'></image>
+          <view>浇水</view>
+        </button>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-view">
+        <text>{{methodName}}</text>
+        <text>浇水：{{water}}天一次</text>
+        <text>环境要求：{{env}}</text>
+        <text>注意事项：{{attention}}</text>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-view">
+        <text>flower says</text>
+      </view>
+    </swiper-item>
+  </swiper>
 </view>
