@@ -4,11 +4,15 @@
     "pages/person/person",
     "pages/huajia-detail/index"
   ],
+  "window":
+  {
+    "navigationBarTitleText": "掌上花盟"
+  },
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/huajia/huajia",
-        "text": "花de架",
+        "text": "花架",
         "iconPath": "images/icons/huajia1.png",
         "selectedIconPath": "images/icons/huajia2.png"
       },

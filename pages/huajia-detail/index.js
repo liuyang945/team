@@ -35,7 +35,8 @@ Page({
       success: function(res) {
         console.log(res.data)
         that.setData({
-          flower: res.data
+          flower: res.data,
+          flowerSays: res.data.says
         })
 
         //设置顶部导航栏标题
@@ -51,10 +52,20 @@ Page({
         console.log(res.data)
         that.setData({
           method: res.data,
+          methodName: res.data.name,
           water: res.data.water,
           env: res.data.env,
           attention: res.data.attention
         })
+      }
+    })
+
+    //获取页面高度
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          clientHeight: res.windowHeight-177
+        });
       }
     })
   },
