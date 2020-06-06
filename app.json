@@ -2,7 +2,8 @@
   "pages": [
     "pages/huajia/huajia",
     "pages/person/person",
-    "pages/huajia-detail/index"
+    "pages/huajia-detail/index",
+    "pages/search/search"
   ],
   "window":
   {

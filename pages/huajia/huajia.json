@@ -1,5 +1,6 @@
 {
   "usingComponents":{
-    "fangan":"/components/fangan/fangan"
+    "fangan":"/components/fangan/fangan",
+    "more":"/components/more/more"
   }
 }

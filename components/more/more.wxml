@@ -1,0 +1,11 @@
+<view >
+ <navigator url="/pages/search/search">
+  <view>
+   <image src="/images/image/more.png" class="imagedisplay"></image>
+  </view>
+  <view class="textdisplay">
+   <text>更多方案</text>
+  </view>
+ </navigator>
+</view>
+<slot></slot>

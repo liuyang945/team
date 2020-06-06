@@ -1,0 +1,34 @@
+.chooseAddress_text{
+  margin-left: 0rpx;
+  font-size: 50rpx;
+  text-align: center;
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item2 {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+.picker-view .cancel_text{
+  color: green;
+}
+
+.picker-view .sure_text{
+  color: green;
+}

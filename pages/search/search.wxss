@@ -1,0 +1,11 @@
+._text{
+  font-size: 50rpx;
+  text-align: center;
+}
+
+.container{
+  display: flex;
+}
+
+
+

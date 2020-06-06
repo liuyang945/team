@@ -1,0 +1,16 @@
+ <!--地址-->
+ <view >
+  <view class="container" style="flex-direction:row">
+    <text class='_text'>地址:</text>
+    <address-selecter bind:select="addressSelecter"></address-selecter>
+  </view> 
+</view>
+ <view >
+  <view class="container" style="flex-direction:row">
+    <text class='_text'>花种:</text>
+    <flower-selecter bind:select="flowerSelecter"></flower-selecter>
+   </view>
+ </view>
+<view>
+ <button type="primary" bindtap="jumpPage">点击</button>
+</view>
