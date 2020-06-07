@@ -2,12 +2,8 @@
   "pages": [
     "pages/huajia/huajia",
     "pages/person/person",
-<<<<<<< HEAD
-    "pages/huajia-detail/index"
-=======
     "pages/huajia-detail/index",
     "pages/search/search"
->>>>>>> team
   ],
   "window":
   {
