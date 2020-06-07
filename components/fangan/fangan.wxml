@@ -4,7 +4,15 @@
    <image src="{{fanganimage}}" class="imagedisplay"></image>
   </view>
   <view class="textdisplay">
+<<<<<<< Updated upstream
    <text>{{fanganname}}</text>
+=======
+<<<<<<< HEAD
+   <text >{{fanganname}}</text>
+=======
+   <text>{{fanganname}}</text>
+>>>>>>> team
+>>>>>>> Stashed changes
   </view>
  </navigator>
 </view>

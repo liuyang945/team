@@ -3,12 +3,17 @@
 BODY
 */
 .body {
+<<<<<<< HEAD
+=======
+  background-color: #fff;
+>>>>>>> team
   height: 100vh;
 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+<<<<<<< HEAD
 .background {
   width: 100%;
   height: 100%;
@@ -16,6 +21,8 @@ BODY
   background-size:100% 100%;
   z-index: -1;
 }
+=======
+>>>>>>> team
 
 /**
 文字
@@ -38,6 +45,7 @@ BODY
 .imagesize image {
   width: 400rpx;
   height: 400rpx;
+<<<<<<< HEAD
   border-radius: 50%;
 }
 
@@ -81,4 +89,26 @@ swiper-item {
 .btn1::after {
   border-radius: 98rpx;
   border: 0; 
+=======
+}
+
+/**
+按钮
+*/
+.btn-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 60%;
+}
+.mini-btn{
+  margin-right: 10rpx;
+>>>>>>> team
 }

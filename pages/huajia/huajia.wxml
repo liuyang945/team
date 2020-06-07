@@ -1,6 +1,13 @@
 <view class="container" style="flex-direction:row">
  <image class="background" src="/images/image/wood.bmp"></image>
  <fangan fanganimage="{{fanganimage}}" fanganname="{{fanganname}}" ></fangan> 
+<<<<<<< Updated upstream
  <more></more>
+=======
+<<<<<<< HEAD
+=======
+ <more></more>
+>>>>>>> team
+>>>>>>> Stashed changes
 </view>
 

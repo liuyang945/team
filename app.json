@@ -2,8 +2,17 @@
   "pages": [
     "pages/huajia/huajia",
     "pages/person/person",
+<<<<<<< Updated upstream
     "pages/huajia-detail/index",
     "pages/search/search"
+=======
+<<<<<<< HEAD
+    "pages/huajia-detail/index"
+=======
+    "pages/huajia-detail/index",
+    "pages/search/search"
+>>>>>>> team
+>>>>>>> Stashed changes
   ],
   "window":
   {
