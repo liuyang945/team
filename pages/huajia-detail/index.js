@@ -1,16 +1,9 @@
 // pages/huajia-detail/index.js
 const DB = wx.cloud.database()
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
 var usrId = ""
 var flowerId = ""
 var methodId = ""
 var mid1Id = ""
-=======
->>>>>>> team
 
 Page({
 
@@ -18,22 +11,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> team
->>>>>>> Stashed changes
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-<<<<<<< HEAD
     var that = this  
     usrId = options.usrId //用户ID
     flowerId = '54bac78c5ec736b3000b9b2d4c18aab7' //options.flowrId
@@ -47,34 +30,20 @@ Page({
     })
 
     //获取当前花的数据
-=======
-    var that = this
-    var usrId = options.usrId
-    var flowerId = '54bac78c5ec736b3000b9b2d4c18aab7' //options.flowrId
-    var methodId = options.methodId
-  options.flowrId
->>>>>>> team
     DB.collection('Flower').doc(flowerId).get({
       success: function(res) {
         console.log(res.data)
         that.setData({
-<<<<<<< HEAD
           flower: res.data,
           flowerSays: res.data.says
         })
 
         //设置顶部导航栏标题
-=======
-          flower: res.data
-        })
-
->>>>>>> team
         wx.setNavigationBarTitle({
           title: res.data.name,
         })
       }
     })
-<<<<<<< HEAD
 
     //获取方案数据
     DB.collection('Method').doc(methodId).get({
@@ -136,8 +105,6 @@ Page({
       icon: 'success',  // 图标类型，默认success
       duration: 1500  // 提示窗停留时间，默认1500ms
     })
-=======
->>>>>>> team
   },
 
 

@@ -1,15 +1,6 @@
 {
   "usingComponents":{
-<<<<<<< Updated upstream
     "fangan":"/components/fangan/fangan",
     "more":"/components/more/more"
-=======
-<<<<<<< HEAD
-    "fangan":"/components/fangan/fangan"
-=======
-    "fangan":"/components/fangan/fangan",
-    "more":"/components/more/more"
->>>>>>> team
->>>>>>> Stashed changes
   }
 }
