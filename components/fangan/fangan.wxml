@@ -4,7 +4,7 @@
    <image src="{{fanganimage}}" class="imagedisplay"></image>
   </view>
   <view class="textdisplay">
-   <text >{{fanganname}}</text>
+   <text>{{fanganname}}</text>
   </view>
  </navigator>
 </view>

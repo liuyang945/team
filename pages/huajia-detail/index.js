@@ -1,5 +1,6 @@
 // pages/huajia-detail/index.js
 const DB = wx.cloud.database()
+
 var usrId = ""
 var flowerId = ""
 var methodId = ""
@@ -11,7 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**

@@ -1,0 +1,24 @@
+/*组件more.wxss*/
+.imagedisplay{
+  height:300rpx;
+  width:200rpx;
+  border-left-color:rgb(109, 79, 14);
+  border-left-width: 25rpx;
+  border-left-style: groove;
+  border-top-color:rgb(109, 79, 14);
+  border-top-width:25rpx;
+  border-top-style:groove;
+  border-right-color:rgb(109, 79, 14);
+  border-right-width: 25rpx;
+  border-right-style: ridge;
+  border-bottom-color:rgb(109, 79, 14) ;
+  border-bottom-width:25rpx ;
+  border-bottom-style:ridge;
+  background-color: white ;
+}
+
+.textdisplay{
+  justify-content: space-around;
+  align-items: center;
+}
+
