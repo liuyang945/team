@@ -1,6 +1,7 @@
-<view class="container" style="flex-direction:row">
- <image class="background" src="/images/image/wood.bmp"></image>
- <fangan fanganimage="{{fanganimage}}" fanganname="{{fanganname}}" ></fangan> 
+<view class="container" style="flex-direction:row;flex-wrap:wrap">
+ <image class="background" mode="aspectFill" src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/SynchronousFireflies_ZH-CN6323931412_1920x1080.jpg"></image>
+ <view wx:for="{{myMethod}}">
+  <fangan navigateTo="/pages/huajia-detail/index?methodId={{item.methodId}}&mid1Id={{item._id}}&flowerId={{item.flowerId}}&own={{true}}" fanganimage="{{item.flowerImg}}" fanganname="{{item.flowerName}}" ></fangan> 
+ </view>
  <more></more>
 </view>
-

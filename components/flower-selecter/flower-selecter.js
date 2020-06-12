@@ -70,7 +70,7 @@ Component({
       that.setData({
         flower: flower_now
       })
-      that.triggerEvent('select', [flower_now, that.data.flowertype[value[0]].name])
+      that.triggerEvent('select', [flower_now, that.data.flowertype[value[0]].id])
     },
 
     /**

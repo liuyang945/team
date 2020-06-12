@@ -2,5 +2,6 @@
   "usingComponents":{
     "address-selecter":"/components/address-selecter/address-selecter",
     "flower-selecter":"/components/flower-selecter/flower-selecter"
-  }
+  },
+  "navigationBarTitleText": "添加方案"
 }

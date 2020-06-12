@@ -1,9 +1,6 @@
 // pages/huajia-detail/index.js
-const DB = wx.cloud.database()
-var usrId = ""
-var flowerId = ""
-var methodId = ""
-var mid1Id = ""
+const DB = wx.cloud.database();
+const app = getApp();
 
 Page({
 
@@ -11,26 +8,34 @@ Page({
    * 页面的初始数据
    */
   data: {
+    nowDate: "",
+    methodId: "",
+    mid1Id: "",
+    flowerId: "",
+    own: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this  
-    usrId = options.usrId //用户ID
-    flowerId = '54bac78c5ec736b3000b9b2d4c18aab7' //options.flowrId
-    methodId = '54bac78c5ec73958000bc97236711ace'  //方案ID
-    mid1Id = '0bdd6b5e5ec739a50009573d434577c5'
+    var that = this
     var time = new Date(); //时间
-    
+    wx.showLoading({
+      title: 'Loading...',
+    })
+
     //设置时间
     that.setData({
-      nowDate: time.getTime()
+      nowDate: time.getTime(),
+      methodId: options.methodId,
+      mid1Id: options.mid1Id,
+      flowerId: options.flowerId,
+      own: options.own
     })
 
     //获取当前花的数据
-    DB.collection('Flower').doc(flowerId).get({
+    DB.collection('Flower').doc(that.data.flowerId).get({
       success: function(res) {
         console.log(res.data)
         that.setData({
@@ -42,11 +47,12 @@ Page({
         wx.setNavigationBarTitle({
           title: res.data.name,
         })
+        wx.hideLoading()
       }
     })
 
     //获取方案数据
-    DB.collection('Method').doc(methodId).get({
+    DB.collection('Method').doc(that.data.methodId).get({
       success: function(res) {
         console.log(res.data)
         that.setData({
@@ -72,22 +78,25 @@ Page({
   //监听页面渲染
   onShow: function(options) {
     var that = this
-    DB.collection('Mid1').doc(mid1Id).get({
-      success: function(res) {
-        console.log(res.data)
-        that.setData({
-          mid1: res.data,
-          watering: that.data.water - parseInt((that.data.nowDate - res.data.lastWatering)/(1000*60*60*24)),
-        })
-      }
-    })
+    if (that.data.own) {
+       DB.collection('Mid1').doc(that.data.mid1Id).get({
+        success: function(res) {
+          console.log(res.data)
+          that.setData({
+            mid1: res.data,
+            watering: that.data.water - parseInt((that.data.nowDate - res.data.lastWatering)/(1000*60*60*24)),
+          })
+        }
+      })
+    }
+   
   },
 
   //浇水事件
   water: function (event) {
     console.log(this.data.nowDate)
     var that = this
-    DB.collection('Mid1').doc(mid1Id).update({
+    DB.collection('Mid1').doc(that.data.mid1Id).update({
       data: {
         lastWatering: that.data.nowDate
       },
@@ -105,6 +114,36 @@ Page({
       icon: 'success',  // 图标类型，默认success
       duration: 1500  // 提示窗停留时间，默认1500ms
     })
+  },
+
+  //添加方案
+  addMethod: function(event) {
+    var that = this
+
+    DB.collection('Mid1').add({
+      data: {
+        flowerId: that.data.flowerId,
+        flowerImg: that.data.flower.img,
+        flowerName: that.data.flower.name,
+        lastWatering: 0,
+        methodId: that.data.methodId,
+        openid: app.globalData.openid,
+        userName: app.globalData.userInfo.nickName
+      },
+      success: function(res) {
+        console.log(res)
+        wx.reLaunch({
+          url: '/pages/huajia/huajia',
+        })
+        //弹窗提示
+        wx.showToast({
+          title: '添加成功！', // 标题
+          icon: 'success',  // 图标类型，默认success
+          duration: 1500  // 提示窗停留时间，默认1500ms
+        })
+      }
+    })
+    
   },
 
 

@@ -1,10 +1,10 @@
 <view >
  <navigator url="/pages/search/search">
   <view>
-   <image src="/images/image/more.png" class="imagedisplay"></image>
+   <image src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/more.png" class="imagedisplay"></image>
   </view>
   <view class="textdisplay">
-   <text>更多方案</text>
+   <text style="color:white;font-weight:bold;">添加方案</text>
   </view>
  </navigator>
 </view>

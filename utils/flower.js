@@ -1,7 +1,7 @@
 var flowertype=[
   {
-    "id":"000001",
-    "name":"仙人掌"
+    "id":"54bac78c5ec736b3000b9b2d4c18aab7",
+    "name":"兰花"
   },
   {
     "id":"000002",

@@ -1,10 +1,10 @@
 <view >
- <navigator url="/pages/huajia-detail/index">
+ <navigator url="{{navigateTo}}">
   <view>
    <image src="{{fanganimage}}" class="imagedisplay"></image>
   </view>
   <view class="textdisplay">
-   <text>{{fanganname}}</text>
+   <text style="color:white;font-weight:bold;">{{fanganname}}</text>
   </view>
  </navigator>
 </view>

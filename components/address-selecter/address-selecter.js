@@ -76,7 +76,7 @@ Component({
       that.setData({
         address: address_now
       })
-      that.triggerEvent('select', [address_now, that.data.provinces[value[0]].name,
+      that.triggerEvent('select', [address_now, that.data.provinces[value[0]].id,
         that.data.citys[value[1]].name, that.data.areas[value[2]].name])
     },
 

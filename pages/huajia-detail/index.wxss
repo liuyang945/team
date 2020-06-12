@@ -42,6 +42,19 @@ BODY
 }
 
 /**
+删除按钮
+*/
+.del {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.del image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/**
 swiper
 */
 swiper-item {

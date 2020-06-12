@@ -1,11 +1,55 @@
+.body {
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}
+
+.addressImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+.flowerImg {
+  width: 120rpx;
+  height: 120rpx;
+}
+
 ._text{
   font-size: 50rpx;
-  text-align: center;
+  font-weight: bold;
 }
 
 .container{
   display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
 }
 
-
-
+button {
+  height: 100rpx;
+  width: 300rpx;
+  background-color: steelblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 98rpx;
+  bottom: 200rpx;
+  margin-left: 225rpx;
+  position: fixed;
+}
+.buttonImg {
+  height: 75rpx;
+  width: 75rpx;
+}

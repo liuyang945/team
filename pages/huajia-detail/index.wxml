@@ -1,7 +1,7 @@
 <!--pages/huajia-detail/index.wxml-->
 <view class="body">
   <!--背景图片-->
-  <image class='background' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590210160748&di=afb651224e8071b556e2da94cc712105&imgtype=0&src=http%3A%2F%2Fimage1.wulinsoso.com%2Fhdpic%2Fzcool%2F2014%2F06%2F02%2F004405469.jpg" mode="aspectFill"></image>
+  <image class='background' src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/wood.bmp" mode="aspectFill"></image>
 
   <!--顶部图片-->
   <view class='imagesize'>
@@ -11,13 +11,16 @@
   <!--swiper-->
   <swiper class="detail-swiper" indicator-dots="{{true}}">
     <swiper-item>
-      <view class="swiper-view1">
+      <view class="swiper-view1" wx:if="{{own}}">
         <text>距下次浇水还有{{watering}}天</text>
          <button class='btn1' bindtap="water">
           <image wx:if="{{watering>0}}" class='btnImg' src='../../images/icons/浇水壶.png'></image>
           <image wx:if="{{watering<=0}}" class='btnImg' src='../../images/icons/浇水壶2.png'></image>
           <view>浇水</view>
         </button>
+      </view>
+      <view class="swiper-view1" wx:else>
+        <button class='btn1' bindtap="addMethod">添加</button>
       </view>
     </swiper-item>
     <swiper-item>

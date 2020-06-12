@@ -1,7 +1,8 @@
 .chooseFlower_text{
   margin-left: 0rpx;
-  font-size: 50rpx;
-  text-align: center;
+  font-size: 30rpx;
+  font-style: italic;
+  color: gray;
 }
 
 .picker-view {

@@ -1,0 +1,11 @@
+<!--登录-->
+<view class="login" wx:if="{{canIUse}}">
+  <!--背景图片-->
+  <image class='background' src="{{image}}" mode="aspectFill"></image>
+
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    <image src="../../images/icons/登录.png" class="buttonImg"></image>
+    <text style="font-weight:bold;font-size:larger;color:white;">Sign in</text>
+  </button>
+</view>
+<view wx:else>请升级微信版本</view>

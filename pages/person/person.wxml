@@ -1,0 +1,14 @@
+<view>
+  <!--背景图片-->
+  <image class='background' src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/SynchronousFireflies_ZH-CN6323931412_1920x1080.jpg" mode="aspectFill"></image>
+  
+  <!--顶部图片-->
+  <view class='imagesize'>
+    <view class="image">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class="info">
+    <open-data type="userNickName" style="color:white;font-weight:bold;font-size:100rpx;"></open-data>>
+  </view>
+</view>

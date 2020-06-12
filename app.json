@@ -1,25 +1,26 @@
 {
   "pages": [
+    "pages/login/index",
     "pages/huajia/huajia",
     "pages/person/person",
     "pages/huajia-detail/index",
     "pages/search/search"
+    
   ],
-  "window":
-  {
+  "window": {
     "navigationBarTitleText": "掌上花盟"
   },
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/huajia/huajia",
-        "text": "花架",
+        "text": "Pergolas",
         "iconPath": "images/icons/huajia1.png",
         "selectedIconPath": "images/icons/huajia2.png"
       },
       {
         "pagePath": "pages/person/person",
-        "text": "个人",
+        "text": "Me",
         "iconPath": "images/icons/person1.png",
         "selectedIconPath": "images/icons/person2.png"
       }
