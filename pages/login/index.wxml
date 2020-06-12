@@ -4,7 +4,7 @@
   <image class='background' src="{{image}}" mode="aspectFill"></image>
 
   <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
-    <image src="../../images/icons/登录.png" class="buttonImg"></image>
+    <image src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/登录.png" class="buttonImg"></image>
     <text style="font-weight:bold;font-size:larger;color:white;">Sign in</text>
   </button>
 </view>

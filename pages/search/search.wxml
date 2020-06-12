@@ -1,16 +1,23 @@
-<!--地址-->
-<view >
-  <view class="container" style="flex-direction:row">
-    <text class='_text'>地址:</text>
-    <address-selecter bind:select="addressSelecter"></address-selecter>
-  </view> 
+<!--背景图片-->
+<image class='background' src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/wood.bmp" mode="aspectFill"></image>
+<view class="body">
+	<!--地址-->
+	<view>
+		<view class="container">
+        <image class="addressImg" src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/地址.png"></image>
+        <address-selecter bind:select="addressSelecter"></address-selecter>
+		</view>
+	</view>
+	<view>
+		<view class="container" style="flex-direction:row">
+			<image class="flowerImg" src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/绿植17.png"></image>
+			<flower-selecter bind:select="flowerSelecter"></flower-selecter>
+		</view>
+	</view>
 </view>
-<view >
-  <view class="container" style="flex-direction:row">
-    <text class='_text'>花种:</text>
-    <flower-selecter bind:select="flowerSelecter"></flower-selecter>
-  </view>
- </view>
 <view>
- <button type="primary" bindtap="jumpPage">点击</button>
+		<button bindtap="jumpPage">
+      <image src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/添加.png" class="buttonImg"></image>
+      <text style="font-weight:bold;font-size:larger;color:white;">添加</text>
+    </button>
 </view>

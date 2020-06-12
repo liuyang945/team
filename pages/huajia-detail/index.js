@@ -146,6 +146,32 @@ Page({
     
   },
 
+  //删除方案
+  delMethod: function(event) {
+    var that = this
+    wx.showModal({
+      title: '删除此方案',
+      content: '确认删除？',
+      success (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          DB.collection('Mid1').doc(that.data.mid1Id).remove({
+            complete: function(res) {
+              console.log(res)
+              console.log(that.data.mid1Id)
+              wx.reLaunch({
+                url: '/pages/huajia/huajia',
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    
+  },
+
 
   /**
    * 用户点击右上角分享
