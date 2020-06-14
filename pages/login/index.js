@@ -7,21 +7,21 @@ Page({
     image: "cloud://flower-aypew.666c-flower-aypew-1302211687/image/SynchronousFireflies_ZH-CN6323931412_1920x1080.jpg"
   },
 
-  onLoad: function() {
+  onLoad: function () {
     var that = this;
     wx.getSetting({
       success(res) {
-        if (res.authSetting['scope.userInfo']){
-            wx.getUserInfo({
-              success: (res) => {
-                console.log("已登录")
-                app.globalData.userInfo = res.userInfo
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: (res) => {
+              console.log("已登录")
+              app.globalData.userInfo = res.userInfo
 
-                wx.switchTab({
-                  url: '/pages/huajia/huajia',
-                })
-              },
-            })
+              wx.switchTab({
+                url: '/pages/huajia/huajia',
+              })
+            },
+          })
         }
       }
     })
@@ -32,31 +32,31 @@ Page({
       //用户按了允许授权按钮
       var that = this;
       //插入登录的用户的相关信息到数据库
-      var openid = app.globalData.openid; 
+      var openid = app.globalData.openid;
       console.log(openid)
       app.globalData.userInfo = e.detail.userInfo
 
       //判断数据库中是否已有用户
       DB.collection('User').where({
-        openid: openid
-      })
-      .get({
-        fail: function(res) {
-          DB.collection('User').add({
-            // data 字段表示需新增的 JSON 数据
-            data: {
-              openid: app.globalData.openid,
-              name: app.globalData.userInfo.nickName
-            },
-            success: function(res) {
-              console.log("success")
-              console.log(res)
-            }
+          openid: openid
         })
-        }
-      })
-      
-      
+        .get({
+          success: function (res) {
+            console.log(res)
+            if (res.data.length == 0) {
+              DB.collection('User').add({
+                // data 字段表示需新增的 JSON 数据
+                data: {
+                  openid: app.globalData.openid,
+                  name: app.globalData.userInfo.nickName
+                }
+              })
+            } else {
+              console.log('success')
+            }
+          }
+        })
+
       //授权成功后，跳转进入小程序首页
       wx.switchTab({
         url: '/pages/huajia/huajia'
