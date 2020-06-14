@@ -1,53 +1,54 @@
 <!--pages/huajia-detail/index.wxml-->
 <view class="body">
-  <!--背景图片-->
-  <image class='background' src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/wood.bmp" mode="aspectFill"></image>
+	<!--背景图片-->
+	<image class='background' src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/wood.bmp" mode="aspectFill"></image>
 
-  <!--顶部图片-->
-  <view class='imagesize'>
-    <image src="{{flower.img}}" class='in-image'>
-    </image>
-  </view>
+	<!--顶部图片-->
+	<view class='imagesize'>
+		<image src="{{flower.img}}" class='in-image'>
+		</image>
+	</view>
 
-  <!--删除方案-->
-  <view wx:if="{{own}}" class="del">
-    <image bindtap="delMethod" src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/delete.png"></image>
-  </view>
+	<!--删除方案-->
+	<view wx:if="{{own}}" class="del">
+		<image bindtap="delMethod" src="cloud://flower-aypew.666c-flower-aypew-1302211687/image/delete.png"></image>
+	</view>
 
-  <!--swiper-->
-  <swiper class="detail-swiper" indicator-dots="{{true}}">
-    <swiper-item>
-      <view class="swiper-view1" wx:if="{{own}}">
-        <text>距下次浇水还有{{watering}}天</text>
-         <button class='btn1' bindtap="water">
-          <image wx:if="{{watering>0}}" class='btnImg' src='cloud://flower-aypew.666c-flower-aypew-1302211687/image/浇水壶.png'></image>
-          <image wx:if="{{watering<=0}}" class='btnImg' src='cloud://flower-aypew.666c-flower-aypew-1302211687/image/浇水壶2.png'></image>
-          <view>浇水</view>
-        </button>
-      </view>
-      <view class="swiper-view1" wx:else>
-        <button class='btn1' bindtap="addMethod">添加</button>
-      </view>
-    </swiper-item>
-    <swiper-item>
-      <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" bindscrolltolower="scrollbot"> 
-        <view style="text-align: center;">
-          <text>{{methodName}}\n</text>
-        </view>
-        <view>
-          <text>\n浇水：{{water}}天一次\n</text>
-          <text>\n环境要求：{{env}}\n</text>
-          <text>\n注意事项：{{attention}}\n\n\n</text>
-        </view>
-      </scroll-view>
-    </swiper-item>
-    <swiper-item>
-      <view style="text-align: center;">
-        <text>花之语录</text>
-      </view>
-      <view wx:for="{{flowerSays}}">
-        <text>\n{{item}}\n</text>
-      </view>
-    </swiper-item>
-  </swiper>
+	<!--swiper-->
+	<swiper class="detail-swiper" indicator-dots="{{true}}">
+		<swiper-item>
+			<view class="swiper-view1" wx:if="{{own}}">
+				<text wx:if="{{!theFirst}}">距下次浇水还有{{watering}}天</text>
+        <text wx:else>您尚未浇水</text>
+				<button class='btn1' bindtap="water">
+					<image wx:if="{{watering>0}}" class='btnImg' src='cloud://flower-aypew.666c-flower-aypew-1302211687/image/浇水壶.png'></image>
+					<image wx:if="{{watering<=0}}" class='btnImg' src='cloud://flower-aypew.666c-flower-aypew-1302211687/image/浇水壶2.png'></image>
+					<view>浇水</view>
+				</button>
+			</view>
+			<view class="swiper-view1" wx:else>
+				<button class='btn1' bindtap="addMethod">添加</button>
+			</view>
+		</swiper-item>
+		<swiper-item>
+			<scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" bindscrolltolower="scrollbot">
+				<view style="text-align: center;">
+					<text>{{methodName}}\n</text>
+				</view>
+				<view>
+					<text>\n浇水：{{water}}天一次\n</text>
+					<text>\n环境要求：{{env}}\n</text>
+					<text>\n注意事项：{{attention}}\n\n\n</text>
+				</view>
+			</scroll-view>
+		</swiper-item>
+		<swiper-item>
+			<view style="text-align: center;">
+				<text>花之语录</text>
+			</view>
+			<view wx:for="{{flowerSays}}">
+				<text>\n{{item}}\n</text>
+			</view>
+		</swiper-item>
+	</swiper>
 </view>

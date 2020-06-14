@@ -12,7 +12,8 @@ Page({
     methodId: "",
     mid1Id: "",
     flowerId: "",
-    own: ""
+    own: "",
+    theFirst: ""
   },
 
   /**
@@ -36,7 +37,7 @@ Page({
 
     //获取当前花的数据
     DB.collection('Flower').doc(that.data.flowerId).get({
-      success: function(res) {
+      success: function (res) {
         console.log(res.data)
         that.setData({
           flower: res.data,
@@ -53,7 +54,7 @@ Page({
 
     //获取方案数据
     DB.collection('Method').doc(that.data.methodId).get({
-      success: function(res) {
+      success: function (res) {
         console.log(res.data)
         that.setData({
           method: res.data,
@@ -69,27 +70,28 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
-          clientHeight: res.windowHeight-177
+          clientHeight: res.windowHeight - 177
         });
       }
     })
   },
 
   //监听页面渲染
-  onShow: function(options) {
+  onShow: function (options) {
     var that = this
     if (that.data.own) {
-       DB.collection('Mid1').doc(that.data.mid1Id).get({
-        success: function(res) {
+      DB.collection('Mid1').doc(that.data.mid1Id).get({
+        success: function (res) {
           console.log(res.data)
           that.setData({
             mid1: res.data,
-            watering: that.data.water - parseInt((that.data.nowDate - res.data.lastWatering)/(1000*60*60*24)),
+            watering: that.data.water - parseInt((that.data.nowDate - res.data.lastWatering) / (1000 * 60 * 60 * 24)),
+            theFirst: res.data.theFirst
           })
         }
       })
     }
-   
+
   },
 
   //浇水事件
@@ -98,26 +100,35 @@ Page({
     var that = this
     DB.collection('Mid1').doc(that.data.mid1Id).update({
       data: {
-        lastWatering: that.data.nowDate
+        lastWatering: that.data.nowDate,
+        theFirst: false
       },
-      success: function(res) {
+      success: function (res) {
         console.log(res.data)
       }
     })
     this.setData({
-      watering: this.data.water
+      watering: this.data.water,
     })
 
     //弹窗提示
     wx.showToast({
       title: '浇水成功！', // 标题
-      icon: 'success',  // 图标类型，默认success
-      duration: 1500  // 提示窗停留时间，默认1500ms
+      icon: 'success', // 图标类型，默认success
+      duration: 1500 // 提示窗停留时间，默认1500ms
     })
+
+    //重新加载页面
+    setTimeout(function () {
+      wx.reLaunch({
+        url: '/pages/huajia-detail/index?methodId=' + that.data.methodId + '&mid1Id=' + that.data.mid1Id + '&flowerId=' + that.data.flowerId + '&own=' + true,
+      })
+    }, 1500)
+
   },
 
   //添加方案
-  addMethod: function(event) {
+  addMethod: function (event) {
     var that = this
 
     DB.collection('Mid1').add({
@@ -128,9 +139,10 @@ Page({
         lastWatering: 0,
         methodId: that.data.methodId,
         openid: app.globalData.openid,
-        userName: app.globalData.userInfo.nickName
+        userName: app.globalData.userInfo.nickName,
+        theFirst: "yes"
       },
-      success: function(res) {
+      success: function (res) {
         console.log(res)
         wx.reLaunch({
           url: '/pages/huajia/huajia',
@@ -138,25 +150,25 @@ Page({
         //弹窗提示
         wx.showToast({
           title: '添加成功！', // 标题
-          icon: 'success',  // 图标类型，默认success
-          duration: 1500  // 提示窗停留时间，默认1500ms
+          icon: 'success', // 图标类型，默认success
+          duration: 1500 // 提示窗停留时间，默认1500ms
         })
       }
     })
-    
+
   },
 
   //删除方案
-  delMethod: function(event) {
+  delMethod: function (event) {
     var that = this
     wx.showModal({
       title: '删除此方案',
       content: '确认删除？',
-      success (res) {
+      success(res) {
         if (res.confirm) {
           console.log('用户点击确定')
           DB.collection('Mid1').doc(that.data.mid1Id).remove({
-            complete: function(res) {
+            complete: function (res) {
               console.log(res)
               console.log(that.data.mid1Id)
               wx.reLaunch({
@@ -169,7 +181,7 @@ Page({
         }
       }
     })
-    
+
   },
 
 
