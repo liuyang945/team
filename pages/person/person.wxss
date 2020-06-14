@@ -29,3 +29,29 @@
   flex-direction: column;
   text-align: center;
 }
+
+.feedback {
+  width: 300rpx;
+  height: 100rpx;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  bottom: 100rpx;
+  margin-left: 225rpx;
+  position: fixed;
+}
+.feedback::after {
+  border: none;
+}
+
+.copyright{
+  font-size: 20rpx;
+  color: #fff;
+  position: fixed;
+  text-align: center;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+}
